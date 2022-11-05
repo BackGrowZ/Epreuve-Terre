@@ -3,21 +3,6 @@
 // recuperer la liste des argument au quel on retire le "node" et le nom du fichier
 const ARG = process.argv.slice(2);
 
-// Resultat en vert
-const returnResult = (text) => {
-  const COLOR_GREEN = "\x1b[32m";
-  const COLOR_RESET = "\x1b[0m";
-  console.log(COLOR_GREEN, text, COLOR_RESET);
-};
-
-// Error de couleur rouge
-const returnError = (text = null) => {
-  const COLOR_RED = "\x1b[31m";
-  const COLOR_RESET = "\x1b[0m";
-  const msg = typeof text === "string" ? text : "Error";
-  console.error(COLOR_RED, msg, COLOR_RESET);
-};
-
 const convert24to12 = (arg) => {
   if (haveArg(1, true) && isValideArg(arg)) {
     const nbr = arg[0];
@@ -28,7 +13,7 @@ const convert24to12 = (arg) => {
     const heure12Str = heure12 < 10 ? `0${heure12}` : heure12;
     const end = heure > 12 ? "PM" : "AM";
     const msgResult = `${heure12Str}:${minute}${end}`;
-    returnResult(msgResult);
+    console.log(msgResult);
   }
 };
 
@@ -39,7 +24,7 @@ const haveArg = (length = 1, exact = false) => {
     return true;
   }
   const msgError = exact ? `Merci de mettre ${length} argument(s)` : `Il vous faut au moins ${length} argument(s)`;
-  returnError(msgError);
+  console.error(msgError);
   return false;
 };
 
@@ -47,7 +32,7 @@ const haveArg = (length = 1, exact = false) => {
 const isValideArg = (arg) => {
   // je verrifie que l'argument est bien un string et qu'il contient bien un ":"
   if (typeof arg[0] !== "string" || !arg[0].includes(":")) {
-    returnError("Merci de rentrer une heure au format hh:mm");
+    console.error("Merci de rentrer une heure au format hh:mm");
     return false;
   }
 
