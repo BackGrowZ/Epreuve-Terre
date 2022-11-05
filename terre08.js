@@ -1,4 +1,4 @@
-// ============= Taille d’une chaîne ============= \\
+// ============= Puissance d’un nombre ============= \\
 
 // recuperer la liste des argument au quel on retire le "node" et le nom du fichier
 const ARG = process.argv.slice(2);
