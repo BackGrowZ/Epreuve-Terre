@@ -1,9 +1,8 @@
 // ============= Nom du programme ============= \\
-const path = require("path");
 
 const getCurrentFileName = () => {
-  const currentFileName = path.basename(__filename);
-  return currentFileName;
+  const path = process.argv[1].split('\\')
+  return path[path.length - 1]
 };
 
 console.log(getCurrentFileName());
