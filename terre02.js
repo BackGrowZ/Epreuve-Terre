@@ -19,9 +19,9 @@ const returnError = (text = null) => {
 };
 
 // donne la suite de l'aphabet
-const showArg = (arguments) => {
+const showArg = (args) => {
   if (haveArg(2)) {
-    arguments.forEach((argument) => returnResult(argument));
+    args.forEach((arg) => returnResult(arg));
   }
 };
 
