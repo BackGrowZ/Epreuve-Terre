@@ -21,15 +21,15 @@ const haveArg = (length = 1, exact = false) => {
   if (checked) {
     return true;
   }
-  const msgError = exact ? `Merci de mettre ${length} argument(s)` : `Il vous faut au moins ${length} argument(s)`;
-  console.error(msgError);
+  const msgError = exact ? `error:Merci de mettre ${length} argument(s)` : `error:Il vous faut au moins ${length} argument(s)`;
+  console.log(msgError);
   return false;
 };
 
 // verrifie que l'argument est une chaine de caratere
 const isValideArg = (arg) => {
   if (!isNaN(parseInt(arg))) {
-    console.error("Merci de rentrer une chaine de caractere");
+    console.log("error:Merci de rentrer une chaine de caractere");
     return false;
   }
 

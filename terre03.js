@@ -19,7 +19,7 @@ const haveArg = (length = 1) => {
   if (ARG.length >= length) {
     return true;
   }
-  console.error("Merci de preciser la lettre de depart");
+  console.log("error:Merci de preciser la lettre de depart");
   return false;
 };
 
@@ -29,7 +29,7 @@ const isValideArg = (letter) => {
   if (ALPHABET.includes(argEnMinuscule)) {
     return true;
   }
-  console.error("Seul une lettre comprise entre A et Z est accepter");
+  console.log("error:Seul une lettre comprise entre A et Z est accepter");
   return false;
 };
 

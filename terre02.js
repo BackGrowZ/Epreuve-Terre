@@ -15,7 +15,7 @@ const haveArg = (length = 1) => {
   if (ARG.length >= length) {
     return true;
   }
-  console.error("Il vous faut au moins 2 arguments");
+  console.log("error:Il vous faut au moins 2 arguments");
   return false;
 };
 

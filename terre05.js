@@ -21,8 +21,8 @@ const haveArg = (length = 1, exact = false) => {
   if (checked) {
     return true;
   }
-  const msgError = exact ? `Merci de mettre ${length} argument(s)` : `Il vous faut au moins ${length} argument(s)`;
-  console.error(msgError);
+  const msgError = exact ? `error:Merci de mettre ${length} argument(s)` : `error:Il vous faut au moins ${length} argument(s)`;
+  console.log(msgError);
   return false;
 };
 
@@ -32,17 +32,17 @@ const isValideArg = (arg) => {
   const diviseur = parseInt(arg[1]);
 
   if (isNaN(dividende) || isNaN(diviseur)) {
-    console.error("Seul des nombres sont autoriser");
+    console.log("error:Seul des nombres sont autoriser");
     return false;
   }
 
   if (dividende < diviseur) {
-    console.error("Le dividende doit etre superieur au diviseur");
+    console.log("error:Le dividende doit etre superieur au diviseur");
     return false;
   }
 
   if (diviseur === 0) {
-    console.error("Il est pas possbile de diviser par 0");
+    console.log("error:Il est pas possbile de diviser par 0");
     return false;
   }
 

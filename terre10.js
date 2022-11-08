@@ -24,20 +24,20 @@ const haveArg = (length = 1, exact = false) => {
   if (checked) {
     return true;
   }
-  const msgError = exact ? `Merci de mettre ${length} argument(s)` : `Il vous faut au moins ${length} argument(s)`;
-  console.error(msgError);
+  const msgError = exact ? `error:Merci de mettre ${length} argument(s)` : `error:Il vous faut au moins ${length} argument(s)`;
+  console.log(msgError);
   return false;
 };
 
 // verrifie que l'argument est un numbre
 const isValideArg = (arg) => {
   if (isNaN(parseInt(arg[0])) && isNaN(parseInt(arg[1]))) {
-    console.error("Merci de rentrer que des nombre");
+    console.log("error:Merci de rentrer que des nombre");
     return false;
   }
 
   if (parseInt(arg[0]) <= 1) {
-    console.error("Je sais seulement chercher la racine d'un nombre superieur a 1");
+    console.log("error:Je sais seulement chercher la racine d'un nombre superieur a 1");
     return false;
   }
 

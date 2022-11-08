@@ -23,8 +23,8 @@ const haveArg = (length = 1, exact = false) => {
   if (checked) {
     return true;
   }
-  const msgError = exact ? `Merci de mettre ${length} argument(s)` : `Il vous faut au moins ${length} argument(s)`;
-  console.error(msgError);
+  const msgError = exact ? `error:Merci de mettre ${length} argument(s)` : `error:Il vous faut au moins ${length} argument(s)`;
+  console.log(msgError);
   return false;
 };
 
@@ -32,7 +32,7 @@ const haveArg = (length = 1, exact = false) => {
 const isValideArg = (arg) => {
   // je verrifie que l'argument est bien un string et qu'il contient bien un ":"
   if (typeof arg[0] !== "string" || !arg[0].includes(":")) {
-    console.error("Merci de rentrer une heure au format hh:mm");
+    console.log("error:Merci de rentrer une heure au format hh:mm");
     return false;
   }
 

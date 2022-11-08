@@ -19,8 +19,8 @@ const haveArg = (length = 1, exact = false) => {
   if (checked) {
     return true;
   }
-  const msgError = exact ? `Merci de mettre ${length} argument(s)` : `il vous faut au moins ${length} argument(s)`;
-  console.error(msgError);
+  const msgError = exact ? `error:Merci de mettre ${length} argument(s)` : `il vous faut au moins ${length} argument(s)`;
+  console.log(msgError);
   return false;
 };
 
@@ -29,7 +29,7 @@ const isValideArg = (arg) => {
   if (!isNaN(arg)) {
     return true;
   }
-  console.error("Seul les nombres sont accepter");
+  console.log("error:Seul les nombres sont accepter");
   return false;
 };
 
